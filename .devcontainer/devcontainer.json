@@ -3,7 +3,17 @@
 {
 	"name": "Rust",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/rust:0-1-bullseye",
+	// "image": "mcr.microsoft.com/devcontainers/rust:0-1-bullseye",
+	"build": {
+		"dockerfile": "Dockerfile",
+		// Use 'context' to specify the path to the Dockerfile.
+		"context": "..",
+		// Use 'args' to pass build arguments to the Dockerfile.
+		"args": {
+			// Update this if you change the Dockerfile name or path.
+			"VARIANT": "1.70.0-bullseye"
+		}
+	},
 	"customizations": {
 		"vscode": {
 			"extensions": [
